@@ -16,7 +16,10 @@ export class LoginComponent implements OnInit {
   login(){
     let email=this.email;
     let password=this.password;
-    if (password.length < 8) {
+    if(email=="" || email==null || email.trim() ==""){
+      alert("please enter the email");
+    }
+    else if (password.length < 8) {
       alert("password must be in 8 character")
   }
   else {

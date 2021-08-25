@@ -1,25 +1,31 @@
 <div class="register">
         
     <form (ngSubmit)="register()">
-        
+                    
         
         <div class="regform">
             <div class="regimg"><img src="assets/images/1665644.png" alt="user" width="20%" height="20%"></div>
-        
+
                 <h1>Create Account</h1>
+                <div class="reginput">
              <label for="username">User Name</label><br>
-                <input type="text"[(ngModel)]="username" name="username" id="username" required><br>
+                <input type="text" name="name" [(ngModel)]="username" id="name" required autofocus pattern="[A-Za-z]{1,32}">
+            </div>
+            <div class="reginput">
                 <label for="email">Email</label><br>
-                <input type="email" [(ngModel)]="email" name="email" id="email" required><br>
-                <label for="password">Create Password</label><br>
-                <input type="password"[(ngModel)]="password" name="password" id="password" required><br>
-                <label for="password">Confirm Password</label><br>
-                <input type="password" [(ngModel)]="confirmpassword" name="confirmpassword" id="confirmpassword" required><br><br>
-                <button type="submit" id="register.signin">sign up</button>
+                <input type="email" name="email" [(ngModel)]="email" id="email" required  pattern="[a-z0-9._]+@[a-z.]+\.[a-z]{2,3}$"><br>
+            </div> 
+            <div class="reginput"> <label for="password">Create Password</label><br>
+                <input type="password" name="password" [(ngModel)]="password" id="password" required ><br>
+            </div> <div class="reginput">
+            <label for="password">Confirm Password</label><br>
+            
+             <input type="password" name="confirmpassword" [(ngModel)]="confirmpassword" id="confirmpassword" required><br><br>
+                <button id="register.signin">sign up</button>
                 <button id="register.cancel">
-                    <a href='/login'>cancel</a>
+                    <a href="login.html">cancel</a>
                  </button>
+                </div>
         </div>
     </form>
 </div>
-<footer id="footer"></footer>

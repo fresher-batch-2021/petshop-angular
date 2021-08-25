@@ -21,7 +21,10 @@ export class RegisterComponent implements OnInit {
     const email=this.email;
     const password= this.password;
     const confirmpassword = this.confirmpassword;
-    if(password.length < 8){
+    if(email==""||email==null||email.trim()==""){
+      alert("please enter email");
+    }
+   else if(password.length < 8){
       alert("password must be 8 character");
   }
   else if(password!=confirmpassword){

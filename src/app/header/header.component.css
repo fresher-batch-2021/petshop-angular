@@ -6,34 +6,42 @@ header{
 /* header */
 
 .navbar{
-   
+    /* border: solid black; */
     background-color:#3da6fc ;
-    /* background-color: lightgreen; */
-    height: 80px;
-    
+    height: 80px;  
 }
-.navbar a{
-    font-size: 40px;
-    color: white;
-    margin-left: 5px;
+.signin{
+    /* border: solid white; */
+    border-radius: 10px;
+    float: right;
+    margin-right: 12%;
+    margin-top: 10px;
+    font-size: 20px;
 }
-.navbar .navcontent ul{
-    /* float: right; */
-    position: absolute;
-    top :16px;
-    right: 5px  ;
-    
-    list-style: none;
+.navcontent ul{
+    position: relative;
+    /* border: solid black; */
+   
+    top: 10px;
+    left: 200px;
 }
 .navcontent li{
-    float: left;
+    /* border: solid black; */
     font-size: 20px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding-left: 5px;
+    float: right;
+    display: inline-block;
+    padding-right:30px;
+    margin-top: 40px;
+    
 }
 
-
-.head{
-    display: inline-block;
+.logo{
+    margin-top: 5px;
+    font-size: 40px;
+    float: left;
+    /* border: solid black; */
+}
+.navbar a{
+    color: white;
+    
 }

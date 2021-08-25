@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   }
 
         
-       slideData =["assets/images/slide2.jpg","assets/images/slide2.jpg","assets/images/slide3.jpg",];
+       slideData =["assets/images/slide1.jpg","assets/images/slide2.jpg","assets/images/slide3.jpg",];
          slideIndex = 0;
          showSlides() {
 
