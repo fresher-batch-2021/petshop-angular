@@ -1,1 +1,26 @@
 <p>orders works!</p>
+<table border="1">
+    <Caption>user credentials</Caption>
+    <thead>
+        <tr>
+            <td>s.no</td>
+            <td>customer name</td>
+            <td>phone number</td>
+            <td>address</td>
+            <td>total amount</td>
+                 
+        </tr>
+    </thead>
+
+    <tbody *ngFor='let order of listOrders; let i=index'>
+        <tr>
+            <td>{{i+1}}</td>
+            <td>{{order.name}}</td>
+            <td>{{order.phonenumber}}</td>
+            <td>{{order.address}}</td>
+            <td>{{order.totalAmount}}</td>
+            
+            
+           </tr>
+    </tbody>
+</table>
