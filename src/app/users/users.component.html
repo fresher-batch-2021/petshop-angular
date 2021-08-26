@@ -1,1 +1,24 @@
 <p>users works!</p>
+<section>
+    <table border="1">
+        <Caption>user credentials</Caption>
+        <thead>
+            <tr>
+                <td>s.no</td>
+                <td>userName</td>
+                <td>email</td>
+                <td>user id</td>
+                <td>Delete</td>
+            </tr>
+        </thead>
+        <tbody *ngFor='let user of users; let i=index'>
+            <tr>
+                <td>{{i+1}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user._id}}</td>
+                <td><button (click)="delete(user._id,user._rev)">delete user</button></td>
+            </tr>
+        </tbody>
+    </table>
+</section>

@@ -1,6 +1,7 @@
 header{
     position: sticky;
     top: 0;
+    width: 100%;
 }
 
 /* header */
@@ -14,23 +15,25 @@ header{
     /* border: solid white; */
     border-radius: 10px;
     float: right;
-    margin-right: 12%;
+    margin-right: 10%;
     margin-top: 10px;
     font-size: 20px;
 }
 .navcontent ul{
     position: relative;
-    /* border: solid black; */
-   
+    border: solid black;
+    float: right;
+    margin-left: 20%;
     top: 10px;
-    left: 200px;
+    
 }
 .navcontent li{
-    /* border: solid black; */
+    /* border: solid rgb(156, 156, 156); */
     font-size: 20px;
-    float: right;
+    
     display: inline-block;
     padding-right:30px;
+    
     margin-top: 40px;
     
 }
