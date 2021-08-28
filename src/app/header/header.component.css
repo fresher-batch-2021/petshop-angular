@@ -15,15 +15,16 @@ header{
     /* border: solid white; */
     border-radius: 10px;
     float: right;
-    margin-right: 10%;
+    margin-right: 14%;
     margin-top: 10px;
     font-size: 20px;
 }
 .navcontent ul{
-    position: relative;
-    border: solid black;
-    float: right;
-    margin-left: 20%;
+    position: absolute;
+    /* border: solid black; */
+    /* float: right; */
+    padding-left: 30px;
+    left: 70%;
     top: 10px;
     
 }
@@ -32,7 +33,7 @@ header{
     font-size: 20px;
     
     display: inline-block;
-    padding-right:30px;
+    padding-right:25px;
     
     margin-top: 40px;
     
@@ -40,6 +41,7 @@ header{
 
 .logo{
     margin-top: 5px;
+    padding-left: 5px;
     font-size: 40px;
     float: left;
     /* border: solid black; */

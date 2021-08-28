@@ -22,15 +22,15 @@ export class UsersComponent implements OnInit {
     });
     }
   
-  delete(id:any,rev:any){
-    //
-    console.log(id);
-      this.userService.deleteUser(id,rev).then((res=>{
-        alert("deleted sucessfully");
-        this.route.navigate(['../users']);
-      }));
+  // delete(id:any,rev:any){
+  //   //
+  //   console.log(id);
+  //     this.userService.deleteUser(id,rev).then((res=>{
+  //       alert("deleted sucessfully");
+  //       this.route.navigate(['../users']);
+  //     }));
      
-    }
+  //   }
   
 
   }

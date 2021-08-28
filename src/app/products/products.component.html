@@ -1,5 +1,5 @@
 <button type="button" routerLink='/addproduct'>add product</button><br><br>
-<table border=1>
+<table border="1">
     
     <thead>
         <tr>
@@ -8,6 +8,7 @@
             <td>Product Name</td>
             <td>Price</td>
             <td>Category</td>
+            <td>Edit</td>
             <td>Delete</td>
         </tr>
     </thead>
@@ -24,6 +25,7 @@
             <td>{{product.productName}}</td>
             <td>{{product.price}}</td>
             <td>{{product.category}}</td>
+            <td><button><a routerLink='../editproducts/{{product._id}}'>Edit</a></button></td>
             <td><button (click)="delete(product._id,product._rev)">delete product</button></td>
 
 

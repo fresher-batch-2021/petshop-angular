@@ -28,4 +28,17 @@ export class ProductService {
     const url=Url+'/'+id+'?rev='+rev;
     return axios.delete(url,{headers:{Authorization: basicAuth}});
   }
+  getProduct(id:string)
+  {
+      const url=Url+"/"+id;
+      return axios.get(url,{headers:{Authorization:basicAuth}});
+    
+  }
+  updateProduct(productObj:any)
+  {
+      const url=Url+"/"+productObj._id;
+      return axios.put(url,productObj,{headers:{Authorization:basicAuth}});
+    
+  }
+ 
 }

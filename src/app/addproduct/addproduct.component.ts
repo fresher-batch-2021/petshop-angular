@@ -51,13 +51,12 @@ export class AddproductComponent implements OnInit {
        category:category,
        quantity:quantity
      };
-     alert("hii");
      this.productService.addDatas(productObj)
      .then((res:any)=>
       {
         let data=res.data;
         console.log(data);
-        alert("working");
+        // alert("working");
      }).catch((err:any)=>
       {
         console.log(err.response.message);

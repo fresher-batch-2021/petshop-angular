@@ -1,0 +1,28 @@
+<p>editproducts works!</p>
+
+<main>
+    
+    <section>
+        <div class="editProductContainer">
+          
+            <h1></h1> <br> <br>
+         <!-- {{product|json}}    -->
+        <form (ngSubmit)="edit()" *ngIf="product">
+            
+            <label for="productName">Product Name</label>
+            <input type="text" name="productName" [(ngModel)]="product.productName" id="product"> <br>
+            <label for="price">price</label>
+            <input type="number" name="price" id="price" [(ngModel)]="product.price"> <br>
+            <label for="category">category</label>
+            <input type="text" name="category" id="category" [(ngModel)]="product.category"> <br>
+            <label for="image">Images</label>
+            <input type="file" (change)="onFileUpload($event)" name="image" id="image" [(ngModel)]="product.imageUrl"> <br>
+            <label for="quantity">ProductQuantity</label>
+            <input type="number" name="quantity" id="quantity" [(ngModel)]="product.quantity">
+
+            <button type="button" (click)='edit()'>update Product</button>
+        
+        </form>
+    </div>
+    </section>
+    
