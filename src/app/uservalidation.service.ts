@@ -17,8 +17,6 @@ export class UservalidationService {
    
   static getUser(){
     const url=Url+"_all_docs?include_docs=true";
-
-   
        return axios.get(url, { headers: {'Authorization': basicAuth }});
     }
    deleteUser(id:any,rev:any){

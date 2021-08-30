@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ValidationService } from '../validation.service';
 import { ProductService } from '../product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-addproduct',
@@ -9,7 +10,7 @@ import { ProductService } from '../product.service';
 })
 export class AddproductComponent implements OnInit {
 
-  constructor(private validator:ValidationService ,private productService:ProductService) { }
+  constructor(private validator:ValidationService ,private productService:ProductService, private route:Router) { }
   productName:string="";
   price:number=0;
   imageUrl:any;
@@ -35,6 +36,7 @@ export class AddproductComponent implements OnInit {
 
   addProduct()
   {
+    alert("ki")
    let name=this.productName;
    let price=this.price;
    let imageUrl=this.imageUrl;
@@ -56,6 +58,8 @@ export class AddproductComponent implements OnInit {
       {
         let data=res.data;
         console.log(data);
+        
+        this.route.navigate(['../product'])
         // alert("working");
      }).catch((err:any)=>
       {

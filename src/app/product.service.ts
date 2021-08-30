@@ -12,7 +12,7 @@ export class ProductService {
   constructor() { }
   addDatas(productObj:any)
   {
-    
+  
     const url=Url;
     return axios.post(url,productObj,{headers:{Authorization:basicAuth}});
   }

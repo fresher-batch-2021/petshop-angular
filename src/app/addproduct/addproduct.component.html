@@ -14,7 +14,11 @@
             <label for="price">price</label>
             <input type="number" name="price" id="price" [(ngModel)]="price"> <br>
             <label for="category">category</label>
-            <input type="text" name="category" id="category" [(ngModel)]="category"> <br>
+            <select name="category" id="category" [(ngModel)]="category">
+                <option value="dog">dog</option>
+                <option value="cat">cat</option>
+                <option value="bird">bird</option>
+            </select> <br>
             <label for="image">Images</label>
             <input type="file" (change)="onFileUpload($event)" name="image" id="image" [(ngModel)]="imageUrl"> <br>
             <label for="quantity">ProductQuantity</label>

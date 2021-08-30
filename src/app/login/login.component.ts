@@ -10,7 +10,6 @@ export class LoginComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    alert("hi")
   }
   email:string="";
   password:string="";

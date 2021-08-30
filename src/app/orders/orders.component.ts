@@ -29,7 +29,7 @@ listOrders:any;
     });
   }
   status(updateProductObj:any){
-alert("hello")
+
     const id=updateProductObj._id;
     const rev=updateProductObj._rev;
     updateProductObj.status='delivered';
