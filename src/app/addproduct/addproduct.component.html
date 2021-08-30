@@ -1,11 +1,11 @@
-<p>products works!</p>
+<app-header></app-header>
 
 <main>
     
     <section>
         <div class="addProductContainer">
           
-            <h1></h1> <br> <br>
+            <h1>Add Product</h1> <br> <br>
             
         <form (ngSubmit)="addProduct()">
             
@@ -13,6 +13,8 @@
             <input type="text" name="productName" [(ngModel)]="productName" id="productName"> <br>
             <label for="price">price</label>
             <input type="number" name="price" id="price" [(ngModel)]="price"> <br>
+            <label for="description">Drescription</label>
+            <input type="tect" name="description" id="description" [(ngModel)]="description"> <br>
             <label for="category">category</label>
             <select name="category" id="category" [(ngModel)]="category">
                 <option value="dog">dog</option>

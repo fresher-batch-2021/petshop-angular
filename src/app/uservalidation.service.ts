@@ -14,7 +14,19 @@ const Url = "https://f6c8119d-795e-4261-b941-ec3cbc9a4a29-bluemix.cloudantnosqld
 export class UservalidationService {
  
   constructor() { }
-   
+
+    loginAuth(email:any,password:any){
+
+    const url = Url+"_find"; 
+    let loginObj={
+      selector:{
+    email:email,
+    password:password
+   },
+   fields:["role"]
+  };
+    return axios.post(url,loginObj,{ headers: {'Authorization': basicAuth }})
+   }
   static getUser(){
     const url=Url+"_all_docs?include_docs=true";
        return axios.get(url, { headers: {'Authorization': basicAuth }});

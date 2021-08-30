@@ -1,0 +1,9 @@
+.addProductContainer{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 35%;
+    margin-right: 35%;
+    padding: 20px;
+    border: solid rgb(116, 116, 233);
+    border-radius: 20px;
+}

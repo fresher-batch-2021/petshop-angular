@@ -1,6 +1,6 @@
 
 <div class="formlogin">
-        <form (ngSubmit)="login()">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
 
             <div class="loginimg"><img src="assets/images/1818401.png" alt="cat" width="30%" height="40%"></div>
             <div class="loginform">
@@ -8,20 +8,16 @@
                 <div class="inputcontainer">
                     <label for="email">Email</label>
                     <br>
-                    <input type="email" name="email" [(ngModel)]="email" id="email"  pattern="[a-z0-9._]+@[a-z.]+\.[a-z]{2,3}$" required>
+                    <input type="email" formControlName="email" name="email" [(ngModel)]="email" id="email"  pattern="[a-z0-9._]+@[a-z.]+\.[a-z]{2,3}$" required>
                 </div>
                 <div class="inputcontainer">
                     <label for="password">Password</label>
                     <br>
-                    <input type="password" name="password" [(ngModel)]="password" id="password" required><br>
-                    <a href="forgetpassword.html">forget password?</a>
+                    <input type="password" formControlName="password" name="password" [(ngModel)]="password" id="password" required><br>
+                    
                 </div>
                 <div class="inputcontainer">
-                    <button class="lgbtn">login</button>
-                    <button class="lgbtn">
-                        <a href="/register">sign up</a>
-                    </button><br>
-
+                    <button class="lgbtn" type="submit" [disabled]="!loginForm.valid">login</button>
                 </div>
             </div>
 

@@ -13,6 +13,7 @@ export class AddproductComponent implements OnInit {
   constructor(private validator:ValidationService ,private productService:ProductService, private route:Router) { }
   productName:string="";
   price:number=0;
+  description:string="";
   imageUrl:any;
   category:string="";
   quantity:number=0;
@@ -27,6 +28,7 @@ export class AddproductComponent implements OnInit {
   product = {
     productName :"",
     price: 0,
+    description:"",
     imageUrl :"",
     category:"",
     quantity: 0
@@ -36,9 +38,10 @@ export class AddproductComponent implements OnInit {
 
   addProduct()
   {
-    alert("ki")
+  
    let name=this.productName;
    let price=this.price;
+   let description=this.description;
    let imageUrl=this.imageUrl;
    let category=this.category;
    let quantity=this.quantity;
@@ -49,6 +52,7 @@ export class AddproductComponent implements OnInit {
      let productObj:any={
        productName:name,
        price:price,
+       description:description,
        imageUrl:imageUrl,
        category:category,
        quantity:quantity

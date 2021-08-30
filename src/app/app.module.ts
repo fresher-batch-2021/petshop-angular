@@ -5,12 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
+
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { CartComponent } from './cart/cart.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminComponent } from './admin/admin.component';
 import { AdminheaderComponent } from './adminheader/adminheader.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
@@ -24,8 +23,7 @@ import { EditproductsComponent } from './editproducts/editproducts.component';
     AppComponent,
     HeaderComponent,
     LoginComponent,
-    RegisterComponent,
-    ForgetpasswordComponent,
+    
     HomeComponent,
     ContactComponent,
     CartComponent,
@@ -40,7 +38,9 @@ import { EditproductsComponent } from './editproducts/editproducts.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

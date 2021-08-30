@@ -1,17 +1,18 @@
-<p>orders works!</p>
+<app-header></app-header>
 <table border="1">
-    <Caption>user credentials</Caption>
+    
     <thead>
         <tr>
             <td>s.no</td>
-            <td>customer name</td>
-            <td>phone number</td>
-            <td>address</td>
-            
-            <td>total amount</td>
-            <td>payment</td>
-            <td>status</td>
-            <td>process</td>
+            <td>Customer name</td>
+            <td>Phone number</td>
+            <td>Address</td>
+            <td>Date</td>
+            <td>Total amount</td>
+            <td>Payment</td>
+            <td>Status</td>
+            <td>Process</td>
+
                  
         </tr>
     </thead>
@@ -22,6 +23,7 @@
             <td>{{order.name}}</td>
             <td>{{order.phonenumber}}</td>
             <td>{{order.address}}</td>
+            <td>{{order.date}}</td>
             <td>{{order.totalAmount}}</td>
             <td>cod</td>
             <td>{{order.status}}</td>

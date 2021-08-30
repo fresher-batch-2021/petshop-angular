@@ -11,20 +11,13 @@ header{
     background-color:#3da6fc ;
     height: 80px;  
 }
-.signin{
-    /* border: solid white; */
-    border-radius: 10px;
-    float: right;
-    margin-right: 14%;
-    margin-top: 10px;
-    font-size: 20px;
-}
+
 .navcontent ul{
     position: absolute;
     /* border: solid black; */
     /* float: right; */
     padding-left: 30px;
-    left: 70%;
+    left: 74%;
     top: 10px;
     
 }
@@ -33,7 +26,7 @@ header{
     font-size: 20px;
     
     display: inline-block;
-    padding-right:25px;
+    padding-right:20px;
     
     margin-top: 40px;
     
