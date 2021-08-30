@@ -1,3 +1,7 @@
+
+.addProductContainer:hover{
+    box-shadow: 5px 3px 10px 2px black;
+}
 .addProductContainer{
     margin-top: 20px;
     margin-bottom: 20px;
@@ -6,4 +10,12 @@
     padding: 20px;
     border: solid rgb(116, 116, 233);
     border-radius: 20px;
+}
+.inputcontainer{
+    margin: 5px 20px 10px 20px;
+    padding: 5px;
+}
+.inputcontainer >input{
+    height: 20px;
+    width: 80%;
 }

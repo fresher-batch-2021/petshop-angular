@@ -27,7 +27,7 @@
             <td>{{order.totalAmount}}</td>
             <td>cod</td>
             <td>{{order.status}}</td>
-            <td><button (click)='status(order)'>change status</button></td>
+            <td><button (click)='status(order)' *ngIf="order.status!='CANCELLED'">change status</button></td>
             
             
            </tr>

@@ -23,9 +23,12 @@ id:string;
   ngOnInit(): void {
     this.getProduct();
   }
+  imageName='';
   onFileUpload(event:any)
   {
     this.imageUrl=event.target.files[0].name;
+    alert(this.imageUrl)
+    this.imageName=this.imageUrl;
   }
   product :any;
   
@@ -38,10 +41,12 @@ id:string;
        
         console.log(res);
         this.product=res.data;
+
+        //this.product.imageUrl=this.imageName;
         // alert("working");
      });
     }
-    
+  
       edit()
       {
         try{
@@ -52,8 +57,6 @@ id:string;
             this.router.navigate(['/product']);
           });
         }
-      
-    
     catch(err)
       {
         console.log(err.message);

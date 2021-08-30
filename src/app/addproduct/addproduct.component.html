@@ -1,36 +1,46 @@
 <app-header></app-header>
 
 <main>
-    
+
     <section>
         <div class="addProductContainer">
-          
-            <h1>Add Product</h1> <br> <br>
-            
-        <form (ngSubmit)="addProduct()">
-            
-            <label for="productName">Product Name</label>
-            <input type="text" name="productName" [(ngModel)]="productName" id="productName"> <br>
-            <label for="price">price</label>
-            <input type="number" name="price" id="price" [(ngModel)]="price"> <br>
-            <label for="description">Drescription</label>
-            <input type="tect" name="description" id="description" [(ngModel)]="description"> <br>
-            <label for="category">category</label>
-            <select name="category" id="category" [(ngModel)]="category">
-                <option value="dog">dog</option>
-                <option value="cat">cat</option>
-                <option value="bird">bird</option>
-            </select> <br>
-            <label for="image">Images</label>
-            <input type="file" (change)="onFileUpload($event)" name="image" id="image" [(ngModel)]="imageUrl"> <br>
-            <label for="quantity">ProductQuantity</label>
-            <input type="number" name="quantity" id="quantity" [(ngModel)]="quantity">
 
-            <button type="button" (click)='addProduct()'>Add Product</button>
-        
-        </form>
-    </div>
+            <h1>Add Product</h1> <br>
+
+            <form (ngSubmit)="addProduct()">
+                <div class="inputcontainer">
+                    <label for="productName">Product Name</label>
+                    <input type="text" name="productName" [(ngModel)]="productName" id="productName"> <br>
+                </div>
+                <div class="inputcontainer">
+                    <label for="price">Price</label><br>
+                    <input type="number" name="price" id="price" [(ngModel)]="price"> <br>
+                </div>
+                <div class="inputcontainer">
+                    <label for="description">Drescription</label>
+                    <input type="text" name="description" id="description" [(ngModel)]="description"> <br>
+                </div>
+                <div class="inputcontainer">
+                    <label for="category">Category</label>
+                    <select name="category" id="category" [(ngModel)]="category">
+                        <option value="dog">dog</option>
+                        <option value="cat">cat</option>
+                        <option value="bird">bird</option>
+                    </select>
+                </div>
+                <div class="inputcontainer">
+                    <label for="image">Images</label>
+                    <input type="file" (change)="onFileUpload($event)" name="image" id="image" [(ngModel)]="imageUrl">
+                </div>
+                <div class="inputcontainer">
+                    <label for="quantity">ProductQuantity</label>
+                    <input type="number" name="quantity" id="quantity" [(ngModel)]="quantity">
+                </div>
+                <button class="" type="button" (click)='addProduct()'>Add Product</button>
+
+            </form>
+        </div>
     </section>
-    
-    
+
+
 </main>

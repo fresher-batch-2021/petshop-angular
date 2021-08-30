@@ -22,9 +22,10 @@ export class AddproductComponent implements OnInit {
   onFileUpload(event:any)
   {
     this.imageUrl=event.target.files[0].name;
-    
+    console.log(this.imageUrl);
   }
 
+ 
   product = {
     productName :"",
     price: 0,
