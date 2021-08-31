@@ -13,7 +13,7 @@ export class EditproductsComponent implements OnInit {
 id:string;
   constructor(private route:ActivatedRoute, private validator:ValidationService ,private productService:ProductService,private router:Router) { 
     this.id = this.route.snapshot.params["id"];
-    alert(this.id)
+    
   }
   productName:string="";
   price:number=0;
@@ -36,11 +36,11 @@ id:string;
   {
    
      this.productService.getProduct(this.id)
-     .then((res:any)=>
+     .subscribe((res:any)=>
       {
        
         console.log(res);
-        this.product=res.data;
+        this.product=res;
 
         //this.product.imageUrl=this.imageName;
         // alert("working");
@@ -52,8 +52,8 @@ id:string;
         try{
           this.validator.ValidateName(this.product.productName,"Enter your name");
           console.log(this.product)
-          this.productService.updateProduct(this.product).then((res:any)=>{
-            let data = res.data;
+          this.productService.updateProduct(this.product).subscribe((res:any)=>{
+            let data = res;
             this.router.navigate(['/product']);
           });
         }

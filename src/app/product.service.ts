@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import axios from 'axios';
 const dbUsername = "apikey-v2-2809fxu62dw0lybt6awh1vn0jxt1srfscx9z33bhudjy";
@@ -9,35 +10,35 @@ const Url = "https://f6c8119d-795e-4261-b941-ec3cbc9a4a29-bluemix.cloudantnosqld
   providedIn: 'root'
 })
 export class ProductService {
-  constructor() { }
+  constructor(private http:HttpClient) { }
   addDatas(productObj:any)
   {
   
     const url=Url;
-    return axios.post(url,productObj,{headers:{Authorization:basicAuth}});
+    return this.http.post(url,productObj,{headers:{Authorization:basicAuth}});
   }
 
   getProducts()
   {
       const url=Url+"_all_docs?include_docs=true";
-      return axios.get(url,{headers:{Authorization:basicAuth}});
+      return this.http.get(url,{headers:{Authorization:basicAuth}});
     
   }
   deleteData(id:string,rev:string)
   {
     const url=Url+'/'+id+'?rev='+rev;
-    return axios.delete(url,{headers:{Authorization: basicAuth}});
+    return this.http.delete(url,{headers:{Authorization: basicAuth}});
   }
   getProduct(id:string)
   {
       const url=Url+"/"+id;
-      return axios.get(url,{headers:{Authorization:basicAuth}});
+      return this.http.get(url,{headers:{Authorization:basicAuth}});
     
   }
   updateProduct(productObj:any)
   {
       const url=Url+"/"+productObj._id;
-      return axios.put(url,productObj,{headers:{Authorization:basicAuth}});
+      return this.http.put(url,productObj,{headers:{Authorization:basicAuth}});
     
   }
  

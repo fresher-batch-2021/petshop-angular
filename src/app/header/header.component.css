@@ -16,8 +16,8 @@ header{
     position: absolute;
     /* border: solid black; */
     /* float: right; */
-    padding-left: 30px;
-    left: 74%;
+    
+    left: 70%;
     top: 10px;
     
 }
@@ -26,7 +26,8 @@ header{
     font-size: 20px;
     
     display: inline-block;
-    padding-right:20px;
+    padding-left:12px;
+    padding-right: 5px;
     
     margin-top: 40px;
     

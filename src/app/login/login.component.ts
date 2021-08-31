@@ -41,10 +41,10 @@ export class LoginComponent implements OnInit {
 else{
       const role = "ADMIN";
       this.loginService.loginAuth(email,password)
-      .then((res:any)=>{
+      .subscribe((res:any)=>{
         
         console.log(res.data)
-        let data=res.data.docs[0];
+        let data=res.docs[0];
         localStorage.setItem('LOGGED_IN_USER', JSON.stringify(data))
         let userStr = localStorage.getItem('LOGGED_IN_USER');
         let user = userStr != null ? JSON.parse(userStr) : null;

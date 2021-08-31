@@ -17,6 +17,9 @@ import { UsersComponent } from './users/users.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ProductsComponent } from './products/products.component';
 import { EditproductsComponent } from './editproducts/editproducts.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import{GoogleChartsModule } from'angular-google-charts';
+import{HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -33,13 +36,16 @@ import { EditproductsComponent } from './editproducts/editproducts.component';
     UsersComponent,
     OrdersComponent,
     ProductsComponent,
-    EditproductsComponent
+    EditproductsComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    GoogleChartsModule.forRoot(),
+    HttpClientModule
   
   ],
   providers: [],

@@ -14,10 +14,10 @@ export class UsersComponent implements OnInit {
     this.userList();
   }
   userList(){
-    UservalidationService.getUser().then((res:any)=>{
-      let data =res.data.rows;
+    this.userService.getUser().subscribe((res:any)=>{
+      let data =res.rows;
       this.users= data.map((obj:any)=>obj.doc);
-    }).catch((err:any)=>{
+    },(err:any)=>{
       console.log("err"+err.data);
     });
     }

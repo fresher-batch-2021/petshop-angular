@@ -14,8 +14,8 @@ export class ProductsComponent implements OnInit {
   }
 
   listAllProducts() {
-    this.productService.getProducts().then(res => {
-      let datas = res.data.rows;
+    this.productService.getProducts().subscribe((res:any) => {
+      let datas = res.rows;
       console.table(datas);
       let productData = datas.map((obj: any) => obj.doc);
       this.products = productData;
@@ -26,12 +26,12 @@ export class ProductsComponent implements OnInit {
     let cfm = confirm("Do you want to delete ?");
     if (cfm) {
 
-      this.productService.deleteData(id, rev).then(res => {
+      this.productService.deleteData(id, rev).subscribe(res => {
         
         window.location.reload();
-      }).catch(err => {
+      }),(err:any) => {
         console.log(err.message.response);
-      });
+      };
 
     }
   }

@@ -59,14 +59,14 @@ export class AddproductComponent implements OnInit {
        quantity:quantity
      };
      this.productService.addDatas(productObj)
-     .then((res:any)=>
+     .subscribe((res:any)=>
       {
         let data=res.data;
         console.log(data);
         
         this.route.navigate(['../product'])
         // alert("working");
-     }).catch((err:any)=>
+     },(err:any)=>
       {
         console.log(err.response.message);
         alert("error");

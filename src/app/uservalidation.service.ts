@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import axios from 'axios';
 
@@ -13,7 +14,7 @@ const Url = "https://f6c8119d-795e-4261-b941-ec3cbc9a4a29-bluemix.cloudantnosqld
 })
 export class UservalidationService {
  
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
     loginAuth(email:any,password:any){
 
@@ -25,15 +26,15 @@ export class UservalidationService {
    },
    fields:["role"]
   };
-    return axios.post(url,loginObj,{ headers: {'Authorization': basicAuth }})
+    return this.http.post(url,loginObj,{ headers: {'Authorization': basicAuth }})
    }
-  static getUser(){
+  getUser(){
     const url=Url+"_all_docs?include_docs=true";
-       return axios.get(url, { headers: {'Authorization': basicAuth }});
+       return this.http.get(url, { headers: {'Authorization': basicAuth }});
     }
    deleteUser(id:any,rev:any){
       const url = Url+id +'?rev'+rev;
-      return axios.delete(url,{ headers: {'Authorization': basicAuth }})
+      return this.http.delete(url,{ headers: {'Authorization': basicAuth }})
     }
 
 }

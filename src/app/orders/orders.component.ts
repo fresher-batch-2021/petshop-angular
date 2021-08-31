@@ -15,18 +15,18 @@ const Url = "https://f6c8119d-795e-4261-b941-ec3cbc9a4a29-bluemix.cloudantnosqld
 })
 export class OrdersComponent implements OnInit {
 
-  constructor(private productService:ProductService , private route:Router) { }
+  constructor(private productService:ProductService,private orderService:OrderService , private route:Router) { }
 listOrders:any;
   ngOnInit(): void {
     this.orders();
   }
   orders(){
-    OrderService.listOfOrders().then((res:any)=>{
-      let data = res.data.rows;
+    this.orderService.listOfOrders().subscribe((res:any)=>{
+      let data = res.rows;
       this.listOrders=data.map((obj:any)=>obj.doc);
-    }).catch((err:any)=>{
+    }),(err:any)=>{
       console.log("err"+err.data);
-    });
+    };
   }
   status(updateProductObj:any){
 
@@ -34,10 +34,11 @@ listOrders:any;
     const rev=updateProductObj._rev;
     updateProductObj.status='delivered';
     const url=Url+id+'?rev='+rev;
-    axios.put(url,updateProductObj,{headers:{Authorization:basicAuth}}).then((res=>{
-      alert("update succesfull")
-      this.route.navigate(['../orders'])
-    }));
+    axios.put(url,updateProductObj,{headers:{Authorization:basicAuth}}).then((res:any)=>{
+      // alert("update succesfull")
+
+      this.route.navigate(['/orders'])
+    });
     
   }
 
