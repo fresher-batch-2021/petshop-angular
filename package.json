@@ -10,7 +10,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~12.2.0",
+    "@angular/animations": "^12.2.3",
     "@angular/common": "~12.2.0",
     "@angular/compiler": "~12.2.0",
     "@angular/core": "~12.2.0",
@@ -21,6 +21,7 @@
     "angular-google-charts": "^2.2.2",
     "axios": "^0.21.1",
     "lodash": "^4.17.21",
+    "ngx-toastr": "^14.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

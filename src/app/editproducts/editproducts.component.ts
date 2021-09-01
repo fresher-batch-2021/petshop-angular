@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ProductService } from '../product.service';
 import { ValidationService } from '../validation.service';
 
@@ -11,7 +12,7 @@ import { ValidationService } from '../validation.service';
 })
 export class EditproductsComponent implements OnInit {
 id:string;
-  constructor(private route:ActivatedRoute, private validator:ValidationService ,private productService:ProductService,private router:Router) { 
+  constructor(private route:ActivatedRoute, private validator:ValidationService ,private productService:ProductService,private router:Router, private toastr:ToastrService) { 
     this.id = this.route.snapshot.params["id"];
     
   }
@@ -27,7 +28,7 @@ id:string;
   onFileUpload(event:any)
   {
     this.imageUrl=event.target.files[0].name;
-    alert(this.imageUrl)
+    // alert(this.imageUrl)
     this.imageName=this.imageUrl;
   }
   product :any;
@@ -54,8 +55,13 @@ id:string;
           console.log(this.product)
           this.productService.updateProduct(this.product).subscribe((res:any)=>{
             let data = res;
-            this.router.navigate(['/product']);
+            this.toastr.success("update successfully");
+            setTimeout(()=>{
+              this.router.navigate(['/product']);
+            },500)
+            
           });
+           
         }
     catch(err)
       {

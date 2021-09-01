@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ValidationService } from '../validation.service';
 import { ProductService } from '../product.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-addproduct',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AddproductComponent implements OnInit {
 
-  constructor(private validator:ValidationService ,private productService:ProductService, private route:Router) { }
+  constructor(private validator:ValidationService ,private productService:ProductService, private route:Router,private toastr:ToastrService) { }
   productName:string="";
   price:number=0;
   description:string="";
@@ -62,10 +63,13 @@ export class AddproductComponent implements OnInit {
      .subscribe((res:any)=>
       {
         let data=res.data;
-        console.log(data);
-        
-        this.route.navigate(['../product'])
-        // alert("working");
+        // console.log(data);
+        this.toastr.success("item added successfully");
+        setTimeout(()=>{
+          this.route.navigate(['../product'])
+        })
+       
+       
      },(err:any)=>
       {
         console.log(err.response.message);

@@ -19,8 +19,8 @@ import { ProductsComponent } from './products/products.component';
 import { EditproductsComponent } from './editproducts/editproducts.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import{GoogleChartsModule } from'angular-google-charts';
-import{HttpClientModule } from '@angular/common/http'
-
+import{HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +45,8 @@ import{HttpClientModule } from '@angular/common/http'
     AppRoutingModule,
     ReactiveFormsModule,
     GoogleChartsModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot(),
   
   ],
   providers: [],

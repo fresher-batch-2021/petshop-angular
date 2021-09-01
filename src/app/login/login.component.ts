@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import axios from'axios';
+import { ToastrService } from 'ngx-toastr';
 import { UservalidationService } from '../uservalidation.service';
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { UservalidationService } from '../uservalidation.service';
 })
 export class LoginComponent implements OnInit {
   loginForm : FormGroup;
-  constructor(private loginService:UservalidationService, private router:Router, private fb : FormBuilder) { 
+  constructor(private loginService:UservalidationService, private router:Router, private fb : FormBuilder,private toastr:ToastrService) { 
     this.loginForm = this.fb.group({
       email : new FormControl("", Validators.required),
       password : new FormControl("", Validators.required)
@@ -32,11 +33,11 @@ export class LoginComponent implements OnInit {
     let email=this.email;
     let password=this.password;
     if(email=="" || email==null || email.trim() ==""){
-      alert("please enter the email");
+      this.toastr.error("please enter the email");
     }
     else if (password.length < 8) 
     {
-      alert("password must be in 8 character")
+      this.toastr.error("password must be in 8 character")
   }
 else{
       const role = "ADMIN";
@@ -49,12 +50,12 @@ else{
         let userStr = localStorage.getItem('LOGGED_IN_USER');
         let user = userStr != null ? JSON.parse(userStr) : null;
         if(user.role=="ADMIN"){
-          alert("welcome admin");
+          this.toastr.success("welcome admin");
           this.router.navigate(['product']);
 
         }
         else{
-          alert("your are not admin");
+          this.toastr.error   ("your are not admin");
           this.router.navigate(['login'])
         }
       });
