@@ -1,6 +1,12 @@
-
+h1{
+    text-align: center;
+}
 .addProductContainer:hover{
     box-shadow: 5px 3px 10px 2px black;
+}
+form{
+    /* border: solid black; */
+    padding: 2px;
 }
 .addProductContainer{
     margin-top: 20px;
@@ -12,10 +18,18 @@
     border-radius: 20px;
 }
 .inputcontainer{
-    margin: 5px 20px 10px 20px;
-    padding: 5px;
+    margin: 5px 20px 10px 60px;
+    padding-left: 8px;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 .inputcontainer >input{
     height: 20px;
-    width: 80%;
+    width: 90%;
+}
+.addbtn{
+    /* float: right; */
+    margin-left: 40%;
+    padding: 5px;
+    /* text-align: center; */
 }

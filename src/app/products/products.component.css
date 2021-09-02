@@ -32,8 +32,23 @@ img{
     height: 80px;
     width: 80px;
 }
+
 .addbtn{
-    right:15px;
-    color: #000;
-    margin: 15px 15px 0 0;
+    border: none;
+    padding: 5px 10px;
+    background-color:#4CAF50;
+    margin: 15px 8px 0 81%;
+    border-radius: 5px;
+}
+.editbtn {
+    border: none;
+    padding: 5px;
+    background-color: #008CBA;
+    border-radius: 5px;
+}
+.deletebtn{
+    border: none;
+    padding: 5px;
+    background-color:#f44336;
+    border-radius: 5px;
 }

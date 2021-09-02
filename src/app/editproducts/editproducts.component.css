@@ -1,0 +1,35 @@
+h1{
+    text-align: center;
+}
+.editProductContainer:hover{
+    box-shadow: 5px 3px 10px 2px black;
+}
+form{
+    /* border: solid black; */
+    padding: 2px;
+}
+.editProductContainer{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 35%;
+    margin-right: 35%;
+    padding: 20px;
+    border: solid rgb(116, 116, 233);
+    border-radius: 20px;
+}
+.inputcontainer{
+    margin: 5px 20px 10px 60px;
+    padding-left: 2px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.inputcontainer >input{
+    height: 20px;
+    width: 90%;
+}
+.editbtn{
+    /* float: right; */
+    margin-left: 35%;
+    padding: 5px;
+    /* text-align: center; */
+}

@@ -5,25 +5,29 @@
     <section>
         <div class="editProductContainer">
           
-            <h1></h1> <br> <br>
+            <h1>Update Product</h1> 
          <!-- {{product|json}}    -->
         <form (ngSubmit)="edit()" *ngIf="product">
-            
+            <div class="inputcontainer">
             <label for="productName">Product Name</label>
             <input type="text" name="productName" [(ngModel)]="product.productName" id="product"> <br>
+        </div>
+        <div class="inputcontainer">
             <label for="price">price</label>
             <input type="number" name="price" id="price" [(ngModel)]="product.price"> <br>
+         </div>
+         <div class="inputcontainer"> 
             <label for="category">category</label>
             <input type="text" name="category" id="category" [(ngModel)]="product.category"> <br>
-            <!-- <label for="image">Images</label>
+            </div><!-- <label for="image">Images</label>
             <input type="file" (change)="onFileUpload($event)" name="image" id="image" [(ngModel)]="product.imageUrl"> <br> -->
-           
+           <div class="inputcontainer">
             <label for="quantity">ProductQuantity</label>
             <input type="number" name="quantity" id="quantity" [(ngModel)]="product.quantity">
-
-            <button type="button" (click)='edit()'>update Product</button>
+        </div>
+            <button type="button" class="editbtn" (click)='edit()'>update Product</button>
         
-            <img src="assets/images/{{product.imageUrl}}"/>
+            <!-- <img src="assets/images/{{product.imageUrl}}"/> -->
         </form>
     </div>
     </section>

@@ -5,7 +5,7 @@
     <section>
         <div class="addProductContainer">
 
-            <h1>Add Product</h1> <br>
+            <h1>Add Product</h1> 
 
             <form (ngSubmit)="addProduct()">
                 <div class="inputcontainer">
@@ -36,7 +36,7 @@
                     <label for="quantity">ProductQuantity</label>
                     <input type="number" name="quantity" id="quantity" [(ngModel)]="quantity">
                 </div>
-                <button class="" type="button" (click)='addProduct()'>Add Product</button>
+                <button class="addbtn" type="button" (click)='addProduct()'>Add Product</button>
 
             </form>
         </div>
