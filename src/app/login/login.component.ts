@@ -13,8 +13,8 @@ export class LoginComponent implements OnInit {
   loginForm : FormGroup;
   constructor(private loginService:UservalidationService, private router:Router, private fb : FormBuilder,private toastr:ToastrService) { 
     this.loginForm = this.fb.group({
-      email : new FormControl("", Validators.required),
-      password : new FormControl("", Validators.required)
+      email : new FormControl("", [Validators.required, Validators.email]),
+      password : new FormControl("", [Validators.required, Validators.minLength(8)])
     })
   }
   user:any;
@@ -27,21 +27,11 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['product']);
     }
   }
-  email:any="";
-  password:any="";
+ 
   login(){
-    let email=this.email;
-    let password=this.password;
-    if(email=="" || email==null || email.trim() ==""){
-      this.toastr.error("please enter the email");
-    }
-    else if (password.length < 8) 
-    {
-      this.toastr.error("password must be in 8 character")
-  }
-else{
+      let user =this.loginForm.value;
       const role = "ADMIN";
-      this.loginService.loginAuth(email,password)
+      this.loginService.loginAuth(user.email,user.password, role)
       .subscribe((res:any)=>{
         
         console.log(res.data)
@@ -50,17 +40,17 @@ else{
         let userStr = localStorage.getItem('LOGGED_IN_USER');
         let user = userStr != null ? JSON.parse(userStr) : null;
         if(user.role=="ADMIN"){
-          this.toastr.success("welcome admin");
+          this.toastr.success("welcome Admin");
           this.router.navigate(['product']);
 
         }
         else{
-          this.toastr.error   ("your are not admin");
+          this.toastr.error("Only Admin can Logged in");
           this.router.navigate(['login'])
         }
       });
    //    alert("successfully login");
 }
   }
-}
+
  

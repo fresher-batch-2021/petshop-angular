@@ -16,13 +16,14 @@ export class UservalidationService {
  
   constructor(private http:HttpClient) { }
 
-    loginAuth(email:any,password:any){
+    loginAuth(email:any,password:any,role:string){
 
     const url = Url+"_find"; 
     let loginObj={
       selector:{
     email:email,
-    password:password
+    password:password,
+    role:role
    },
    fields:["role"]
   };
