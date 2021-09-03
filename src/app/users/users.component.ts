@@ -16,7 +16,8 @@ export class UsersComponent implements OnInit {
   userList(){
     this.userService.getUser().subscribe((res:any)=>{
       let data =res.rows;
-      this.users= data.map((obj:any)=>obj.doc);
+      let userList= data.map((obj:any)=>obj.doc);
+      this.users=userList.filter((obj:any)=>obj.role=="USER");
     },(err:any)=>{
       console.log("err"+err.data);
     });
