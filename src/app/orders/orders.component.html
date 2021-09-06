@@ -1,7 +1,7 @@
 <app-header></app-header>
 <table class="table-content">
-    
-    <thead class=""> 
+
+    <thead class="">
         <tr>
             <td>S.no</td>
             <td>Customer name</td>
@@ -11,7 +11,7 @@
             <td>Total Amount</td>
             <td>Payment</td>
             <td>Status</td>
-            <td>Process</td>       
+            <td>Process</td>
         </tr>
     </thead>
 
@@ -25,10 +25,13 @@
             <td>{{order.totalAmount}}</td>
             <td>cod</td>
             <td>{{order.status}}</td>
-            
-            <td><p *ngIf="order.status!='DELIVERED'"><button class="statusbtn" (click)='status(order)' *ngIf="order.status!='CANCELLED'">change status</button></p></td>
-            
-            
-           </tr>
+
+            <td>
+                <p *ngIf="order.status!='DELIVERED'"><button class="statusbtn" (click)='status(order)'
+                        *ngIf="order.status!='CANCELLED'">change status</button></p>
+            </td>
+
+
+        </tr>
     </tbody>
 </table>

@@ -11,67 +11,59 @@ import { ValidationService } from '../validation.service';
   styleUrls: ['./editproducts.component.css']
 })
 export class EditproductsComponent implements OnInit {
-id:string;
-  constructor(private route:ActivatedRoute, private validator:ValidationService ,private productService:ProductService,private router:Router, private toastr:ToastrService) { 
+  id: string;
+  constructor(private route: ActivatedRoute, private validator: ValidationService, private productService: ProductService, private router: Router, private toastr: ToastrService) {
     this.id = this.route.snapshot.params["id"];
-    
+
   }
-  productName:string="";
-  price:number=0;
-  imageUrl:any;
-  category:string="";
-  quantity:number=0;
+  productName: string = "";
+  price: number = 0;
+  imageUrl: any;
+  category: string = "";
+  quantity: number = 0;
   ngOnInit(): void {
     this.getProduct();
   }
-  imageName='';
-  onFileUpload(event:any)
-  {
-    this.imageUrl=event.target.files[0].name;
+  imageName = '';
+  onFileUpload(event: any) {
+    this.imageUrl = event.target.files[0].name;
     // alert(this.imageUrl)
-    this.imageName=this.imageUrl;
+    this.imageName = this.imageUrl;
   }
-  product :any;
-  
-  getProduct()
-  {
-   
-     this.productService.getProduct(this.id)
-     .subscribe((res:any)=>
-      {
-       
+  product: any;
+
+  getProduct() {
+
+    this.productService.getProduct(this.id)
+      .subscribe((res: any) => {
+
         console.log(res);
-        this.product=res;
+        this.product = res;
 
-        //this.product.imageUrl=this.imageName;
-        // alert("working");
-     });
-    }
-  
-      edit()
-      {
-        try{
-          this.validator.ValidateName(this.product.productName,"Enter your name");
-          console.log(this.product)
-          this.productService.updateProduct(this.product).subscribe((res:any)=>{
-            let data = res;
-            this.toastr.success("update successfully");
-            setTimeout(()=>{
-              this.router.navigate(['/product']);
-            },500)
-            
-          });
-           
-        }
-    catch(err)
-      {
-        console.log(err.message);
-        alert(err.message.response);
-        alert("cant update");
-      }
-   
+      });
   }
 
-  
+  edit() {
+    try {
+      this.validator.ValidateName(this.product.productName, "Enter your name");
+      console.log(this.product)
+      this.productService.updateProduct(this.product).subscribe((res: any) => {
+        let data = res;
+        this.toastr.success("update successfully");
+        setTimeout(() => {
+          this.router.navigate(['/product']);
+        }, 500)
+
+      });
+
+    }
+    catch (err) {
+      console.log(err.message);
+      alert("cant update");
+    }
+
+  }
+
+
 }
 

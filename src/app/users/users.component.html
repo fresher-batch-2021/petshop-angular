@@ -4,11 +4,11 @@
         <Caption class="table-head">user credentials</Caption>
         <thead>
             <tr>
-                <td>s.no</td>
-                <td>userName</td>
-                <td>email</td>
-                <td>user id</td>
-                
+                <td>S.no</td>
+                <td>User Name</td>
+                <td>Email</td>
+                <td>User Id</td>
+
             </tr>
         </thead>
         <tbody *ngFor='let user of users; let i=index'>
@@ -17,7 +17,6 @@
                 <td>{{user.name}}</td>
                 <td>{{user.email}}</td>
                 <td>{{user._id}}</td>
-                <!-- <td><button (click)="delete(user._id,user._rev)">delete user</button></td> -->
             </tr>
         </tbody>
     </table>

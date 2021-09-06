@@ -1,10 +1,10 @@
 <app-header></app-header>
-<button type="button" class="addbtn" routerLink='/addproduct'>add product</button><br><br>
+<button type="button" class="addbtn" routerLink='/addproduct'>Add Product</button><br><br>
 <table class="table-content">
-    
+
     <thead>
         <tr>
-            <td>s.no</td>
+            <td>S.no</td>
             <td>Image</td>
             <td>Product Name</td>
             <td>Price</td>
@@ -18,20 +18,16 @@
 
         <tr>
             <td>{{i+1}}</td>
-
-              <td><img src="assets/images/{{product.imageUrl}}"  /></td>
-              
-              
-
+            <td><img src="assets/images/{{product.imageUrl}}" /></td>
             <td>{{product.productName}}</td>
             <td>{{product.price}}</td>
             <td>{{product.category}}</td>
             <td><button class="editbtn"><a routerLink='../editproducts/{{product._id}}'>Edit</a></button></td>
-            <td><button class="deletebtn" (click)="delete(product._id,product._rev)">delete product</button></td>
+            <td><button class="deletebtn" (click)="delete(product._id,product._rev)">Delete Product</button></td>
 
 
         </tr>
     </tbody>
-   
+
 
 </table>

@@ -8,14 +8,14 @@ import { ProductService } from '../product.service';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor(private productService: ProductService, private toastr:ToastrService) { }
+  constructor(private productService: ProductService, private toastr: ToastrService) { }
   products: any;
   ngOnInit(): void {
     this.listAllProducts();
   }
 
   listAllProducts() {
-    this.productService.getProducts().subscribe((res:any) => {
+    this.productService.getProducts().subscribe((res: any) => {
       let datas = res.rows;
       console.table(datas);
       let productData = datas.map((obj: any) => obj.doc);
@@ -26,15 +26,15 @@ export class ProductsComponent implements OnInit {
   delete(id: string, rev: string) {
     let cfm = confirm("Do you want to delete ?");
     if (cfm) {
-     
+
       this.productService.deleteData(id, rev).subscribe(res => {
         this.toastr.success("item deleted successfully");
-        setTimeout(()=>{
+        setTimeout(() => {
           window.location.reload();
-        },1500)
-        
-        
-      }),(err:any) => {
+        }, 1500)
+
+
+      }), (err: any) => {
         console.log(err.message.response);
       };
 
