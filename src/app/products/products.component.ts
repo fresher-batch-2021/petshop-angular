@@ -17,7 +17,7 @@ export class ProductsComponent implements OnInit {
   listAllProducts() {
     this.productService.getProducts().subscribe((res: any) => {
       let datas = res.rows;
-      console.table(datas);
+      console.log("hari",datas);
       let productData = datas.map((obj: any) => obj.doc);
       this.products = productData;
 

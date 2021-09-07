@@ -7,6 +7,7 @@
             <td>S.no</td>
             <td>Image</td>
             <td>Product Name</td>
+            <td>Quantity</td>
             <td>Price</td>
             <td>Category</td>
             <td>Edit</td>
@@ -20,6 +21,7 @@
             <td>{{i+1}}</td>
             <td><img src="assets/images/{{product.imageUrl}}" /></td>
             <td>{{product.productName}}</td>
+            <td>{{product.quantity}}</td>
             <td>{{product.price}}</td>
             <td>{{product.category}}</td>
             <td><button class="editbtn"><a routerLink='../editproducts/{{product._id}}'>Edit</a></button></td>
