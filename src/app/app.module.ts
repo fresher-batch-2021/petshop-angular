@@ -21,6 +21,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import{GoogleChartsModule } from'angular-google-charts';
 import{HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
+import { AddstockComponent } from './addstock/addstock.component';
+import {  CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgxSpinnerModule } from "ngx-spinner";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,18 +41,21 @@ import { ToastrModule } from 'ngx-toastr';
     OrdersComponent,
     ProductsComponent,
     EditproductsComponent,
-    DashboardComponent
+    DashboardComponent,
+    AddstockComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    NgxSpinnerModule,
     GoogleChartsModule.forRoot(),
     HttpClientModule,
     ToastrModule.forRoot(),
   
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })

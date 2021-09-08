@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { ProductService } from '../product.service';
 @Component({
@@ -8,18 +9,24 @@ import { ProductService } from '../product.service';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor(private productService: ProductService, private toastr: ToastrService) { }
+  constructor(private productService: ProductService, private toastr: ToastrService,private spinner:NgxSpinnerService) { }
   products: any;
   ngOnInit(): void {
+    // this.spinner.show();
     this.listAllProducts();
+    
   }
 
   listAllProducts() {
+   
     this.productService.getProducts().subscribe((res: any) => {
+      setTimeout(() => {
+        this.spinner.hide();
+      }, 100);
       let datas = res.rows;
-      console.log("hari",datas);
       let productData = datas.map((obj: any) => obj.doc);
       this.products = productData;
+      
 
     });
   }

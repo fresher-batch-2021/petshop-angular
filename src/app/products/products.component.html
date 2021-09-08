@@ -10,6 +10,7 @@
             <td>Quantity</td>
             <td>Price</td>
             <td>Category</td>
+            <td>Stock Update</td>
             <td>Edit</td>
             <td>Delete</td>
         </tr>
@@ -24,6 +25,7 @@
             <td>{{product.quantity}}</td>
             <td>{{product.price}}</td>
             <td>{{product.category}}</td>
+            <td><button><a routerLink='../addstock/{{product._id}}'>Add Stock</a></button></td>
             <td><button class="editbtn"><a routerLink='../editproducts/{{product._id}}'>Edit</a></button></td>
             <td><button class="deletebtn" (click)="delete(product._id,product._rev)">Delete Product</button></td>
 
@@ -33,3 +35,11 @@
 
 
 </table>
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>

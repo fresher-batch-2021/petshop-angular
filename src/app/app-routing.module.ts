@@ -1,6 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddproductComponent } from './addproduct/addproduct.component';
+import { AddstockComponent } from './addstock/addstock.component';
 import { AuthGuard } from './auth.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EditproductsComponent } from './editproducts/editproducts.component';
@@ -18,7 +19,8 @@ const routes: Routes = [{path:'home',component:HomeComponent},
 {path:'product',component:ProductsComponent,canActivate:[AuthGuard]},
 {path:'editproducts/:id',component:EditproductsComponent,canActivate:[AuthGuard]},
 {path:'',component:LoginComponent},
-{path:'dashboard',component:DashboardComponent}];
+{path:'dashboard',component:DashboardComponent},
+{path:'addstock/:id',component:AddstockComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
