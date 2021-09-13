@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { AddstockComponent } from './addstock/addstock.component';
 import { AuthGuard } from './auth.guard';
+import { ContentComponent } from './content/content.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EditproductsComponent } from './editproducts/editproducts.component';
 import { HomeComponent } from './home/home.component';
@@ -20,7 +21,8 @@ const routes: Routes = [{path:'home',component:HomeComponent},
 {path:'editproducts/:id',component:EditproductsComponent,canActivate:[AuthGuard]},
 {path:'',component:LoginComponent},
 {path:'dashboard',component:DashboardComponent},
-{path:'addstock/:id',component:AddstockComponent}];
+{path:'addstock/:id',component:AddstockComponent},
+{path:'content',component:ContentComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

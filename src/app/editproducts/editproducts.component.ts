@@ -58,8 +58,8 @@ export class EditproductsComponent implements OnInit {
 
     }
     catch (err) {
-      console.log(err.message);
-      alert("cant update");
+      console.log(err);
+      this.toastr.error("Unable to update");
     }
 
   }

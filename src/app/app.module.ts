@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { CartComponent } from './cart/cart.component';
@@ -19,11 +19,13 @@ import { ProductsComponent } from './products/products.component';
 import { EditproductsComponent } from './editproducts/editproducts.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import{GoogleChartsModule } from'angular-google-charts';
-import{HttpClientModule } from '@angular/common/http';
+import{HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { AddstockComponent } from './addstock/addstock.component';
 import {  CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { ContentComponent } from './content/content.component';
+import { ErrorInterceptor } from './error.interceptor';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
     ProductsComponent,
     EditproductsComponent,
     DashboardComponent,
-    AddstockComponent
+    AddstockComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
@@ -50,13 +53,14 @@ import { NgxSpinnerModule } from "ngx-spinner";
     AppRoutingModule,
     ReactiveFormsModule,
     NgxSpinnerModule,
+    BrowserAnimationsModule,
     GoogleChartsModule.forRoot(),
     HttpClientModule,
     ToastrModule.forRoot(),
   
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:ErrorInterceptor,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

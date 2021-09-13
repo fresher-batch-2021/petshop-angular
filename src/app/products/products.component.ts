@@ -12,7 +12,10 @@ export class ProductsComponent implements OnInit {
   constructor(private productService: ProductService, private toastr: ToastrService,private spinner:NgxSpinnerService) { }
   products: any;
   ngOnInit(): void {
-    // this.spinner.show();
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 1000);
     this.listAllProducts();
     
   }
@@ -20,9 +23,7 @@ export class ProductsComponent implements OnInit {
   listAllProducts() {
    
     this.productService.getProducts().subscribe((res: any) => {
-      setTimeout(() => {
-        this.spinner.hide();
-      }, 100);
+      
       let datas = res.rows;
       let productData = datas.map((obj: any) => obj.doc);
       this.products = productData;
