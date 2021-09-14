@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
+import { Subject } from 'rxjs';
 import { ProductService } from '../product.service';
 @Component({
   selector: 'app-products',
@@ -8,7 +9,8 @@ import { ProductService } from '../product.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-
+  dtOptions: DataTables.Settings = {};
+  dtTrigger: Subject<any> = new Subject();
   constructor(private productService: ProductService, private toastr: ToastrService,private spinner:NgxSpinnerService) { }
   products: any;
   ngOnInit(): void {
@@ -16,6 +18,11 @@ export class ProductsComponent implements OnInit {
     setTimeout(() => {
       this.spinner.hide();
     }, 1000);
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+      pageLength: 5,
+      processing: true
+    };
     this.listAllProducts();
     
   }
@@ -27,7 +34,7 @@ export class ProductsComponent implements OnInit {
       let datas = res.rows;
       let productData = datas.map((obj: any) => obj.doc);
       this.products = productData;
-      
+      this.dtTrigger.next();
 
     });
   }

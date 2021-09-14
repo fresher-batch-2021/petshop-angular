@@ -1,17 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './home/home.component';
-import { ContactComponent } from './contact/contact.component';
-import { CartComponent } from './cart/cart.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AdminComponent } from './admin/admin.component';
-import { AdminheaderComponent } from './adminheader/adminheader.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { UsersComponent } from './users/users.component';
 import { OrdersComponent } from './orders/orders.component';
@@ -23,21 +17,16 @@ import{HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { AddstockComponent } from './addstock/addstock.component';
 import {  CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { NgxSpinnerModule } from "ngx-spinner";
 import { ContentComponent } from './content/content.component';
 import { ErrorInterceptor } from './error.interceptor';
+import { DataTablesModule } from 'angular-datatables';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LoginComponent,
-    
-    HomeComponent,
-    ContactComponent,
-    CartComponent,
-    AdminComponent,
-    AdminheaderComponent,
     AddproductComponent,
     UsersComponent,
     OrdersComponent,
@@ -52,7 +41,8 @@ import { ErrorInterceptor } from './error.interceptor';
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    NgxSpinnerModule,
+    DataTablesModule,
+    SharedModule,
     BrowserAnimationsModule,
     GoogleChartsModule.forRoot(),
     HttpClientModule,

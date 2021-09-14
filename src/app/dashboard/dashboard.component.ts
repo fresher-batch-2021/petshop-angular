@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as _ from 'lodash';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { OrderService } from '../order.service';
 import { ProductService } from '../product.service';
 
@@ -10,9 +11,13 @@ import { ProductService } from '../product.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private productService:ProductService, private orderService:OrderService  ) { }
+  constructor(private productService:ProductService, private orderService:OrderService,private spinner:NgxSpinnerService  ) { }
 
   ngOnInit(): void {
+    this.spinner.show();
+    setTimeout(()=>{
+      this.spinner.hide();
+    },1000);
     this.orderChart();
   }
   orders: any;

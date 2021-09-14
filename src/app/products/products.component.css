@@ -2,7 +2,7 @@
     margin: 40px auto;
     font-size: 0.9em;
     font-family: sans-serif;
-    min-width: 75%;
+    max-width: 100%;
     border-collapse: collapse;
     text-align: center;
 }

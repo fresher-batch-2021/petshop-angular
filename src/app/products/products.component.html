@@ -1,6 +1,6 @@
 <app-header></app-header>
 <button type="button" class="addbtn" routerLink='/addproduct'>Add Product</button><br><br>
-<table class="table-content">
+<table datatable [dtOptions]="dtOptions" [dtTrigger]='dtTrigger' class="table-content">
 
     <thead>
         <tr>

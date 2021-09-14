@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     console.log(this.user)
 
     if (this.user != null) {
-      this.router.navigate(['product']);
+      this.router.navigate(['dashboard']);
     }
   }
 
@@ -41,7 +41,11 @@ export class LoginComponent implements OnInit {
         let user = userStr != null ? JSON.parse(userStr) : null;
         if (user.role == "ADMIN") {
           this.toastr.success("welcome Admin");
-          this.router.navigate(['product']);
+          setTimeout(() => {
+            this.router.navigate(['dashboard']);
+            
+          }, 1000);
+          
         }
         else {
           this.toastr.error("Only Admin can Logged in");

@@ -20,8 +20,11 @@ export class OrdersComponent implements OnInit {
   constructor(private productService: ProductService, private orderService: OrderService, private route: Router, private toastr: ToastrService,private spinner:NgxSpinnerService) { }
   listOrders: any;
   ngOnInit(): void {
-    // this.spinner.show();
-    
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide()
+      }, 1000);
+      
     this.orders();
 
   }
@@ -30,10 +33,7 @@ export class OrdersComponent implements OnInit {
       
       let data = res.rows;
       this.listOrders = data.map((obj: any) => obj.doc);
-      setTimeout(() => {
-        this.spinner.hide()
-        }, 5000);
-        
+      
     }), (err: any) => {
       console.log("err" + err.data);
     };
