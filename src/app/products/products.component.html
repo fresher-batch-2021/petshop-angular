@@ -1,8 +1,8 @@
 <app-header></app-header>
 <button type="button" class="addbtn" routerLink='/addproduct'>Add Product</button><br><br>
 <table datatable [dtOptions]="dtOptions" [dtTrigger]='dtTrigger' class="table-content">
-
-    <thead>
+   <caption  style="font-size: 20px; background-color:black;" appElementref>Product List</caption>
+    <thead >
         <tr>
             <td>S.no</td>
             <td>Image</td>
@@ -16,18 +16,18 @@
         </tr>
     </thead>
 
-    <tbody *ngFor='let product of products; let i=index'>
-
-        <tr>
+    <tbody >
+        <!-- <mat-divider></mat-divider> -->
+        <tr *ngFor='let product of products; let i=index'>
             <td>{{i+1}}</td>
             <td><img src="assets/images/{{product.imageUrl}}" /></td>
             <td>{{product.productName}}</td>
             <td>{{product.quantity}}</td>
             <td>{{product.price}}</td>
             <td>{{product.category}}</td>
-            <td><button><a routerLink='../addstock/{{product._id}}'>Add Stock</a></button></td>
-            <td><button class="editbtn"><a routerLink='../editproducts/{{product._id}}'>Edit</a></button></td>
-            <td><button class="deletebtn" (click)="delete(product._id,product._rev)">Delete Product</button></td>
+            <td><button class="addstock"><a routerLink='{{product._id}}/addstock' mat-raised-button>Add Stock</a></button></td>
+            <td><button class="editbtn"><a routerLink='{{product._id}}/editproducts' mat-raised-button color="primary"><mat-icon>Edit</mat-icon></a></button></td>
+            <td><button class="deletebtn" (click)="delete(product._id,product._rev)" mat-raised-button color="warn"><mat-icon>Delete</mat-icon></button></td>
 
 
         </tr>

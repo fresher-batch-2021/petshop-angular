@@ -17,10 +17,7 @@
             <input type="text" name="category" id="category" [(ngModel)]="product.category"> <br>
             </div><!-- <label for="image">Images</label>
             <input type="file" (change)="onFileUpload($event)" name="image" id="image" [(ngModel)]="product.imageUrl"> <br> -->
-           <div class="inputcontainer">
-            <label for="quantity">ProductQuantity</label>
-            <input type="number" name="quantity" id="quantity" [(ngModel)]="product.quantity">
-        </div>
+           
             <button type="button" class="editbtn" (click)='edit()'>update Product</button>
         
             <!-- <img src="assets/images/{{product.imageUrl}}"/> -->
