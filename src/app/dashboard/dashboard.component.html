@@ -1,6 +1,6 @@
 <app-content>
 <!-- {{revenueData | json}} -->
-
+  <h1>Dash Board</h1>
     <div class="page" *ngIf="revenueData.length>0">
        <div>
            <google-chart class="chart" [type]="myType" [data]="revenueData" [options]="rowChartOptions"></google-chart>

@@ -1,6 +1,7 @@
+
 <app-header></app-header>
 <button type="button" class="addbtn" routerLink='/addproduct'>Add Product</button><br><br>
-<table datatable [dtOptions]="dtOptions" [dtTrigger]='dtTrigger' class="table-content">
+<table datatable [dtOptions]="dtOptions" [dtTrigger]='dtTrigger' class="table-content" *ngIf="products">
    <caption  style="font-size: 20px; background-color:black;" appElementref>Product List</caption>
     <thead >
         <tr>
@@ -35,6 +36,7 @@
 
 
 </table>
+
 <ngx-spinner
   bdColor="rgba(51,51,51,0.8)"
   size="medium"

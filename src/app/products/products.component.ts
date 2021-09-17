@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { Subject } from 'rxjs';
+import { Datatype } from '../datatype';
+import { EditproductsComponent } from '../editproducts/editproducts.component';
 import { ProductService } from '../product.service';
 
 @Component({
@@ -12,8 +15,8 @@ import { ProductService } from '../product.service';
 export class ProductsComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject();
-  constructor(private productService: ProductService, private toastr: ToastrService,private spinner:NgxSpinnerService) { }
-  products: any;
+  constructor(private productService: ProductService, private toastr: ToastrService,private spinner:NgxSpinnerService,private dailog:MatDialog) { }
+  products!: Datatype;
   ngOnInit(): void {
     this.spinner.show();
     setTimeout(() => {
@@ -26,6 +29,10 @@ export class ProductsComponent implements OnInit {
     };
     this.listAllProducts();
     
+  }
+  dialog()
+  {
+    this.dailog.open(EditproductsComponent);
   }
 
   listAllProducts() {

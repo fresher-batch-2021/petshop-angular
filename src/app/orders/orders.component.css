@@ -34,3 +34,9 @@
     background-color:#e7e7e7; color: black;
     border-radius: 5px;
 }
+.head{
+    font-size: large;
+    font-style: normal;
+    font-weight: bolder;
+    color: blue;
+}

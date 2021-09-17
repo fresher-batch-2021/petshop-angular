@@ -4,9 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddstockComponent } from '../addstock/addstock.component';
 import { AuthGuard } from '../auth.guard';
 import { EditproductsComponent } from '../editproducts/editproducts.component';
+import { HeaderComponent } from '../header/header.component';
 import { ProductsComponent } from '../products/products.component';
 
 const routes: Routes = [{path:"",component:ProductsComponent},
+// {path:'header',component:HeaderComponent},
 // {path:"editproduct/:id",component:EditproductsComponent,canActivate:[AuthGuard]},
 // {path:'addproduct',component:AddproductComponent ,canActivate:[AuthGuard]},
 // {path:'addstock/:id',component:AddstockComponent}

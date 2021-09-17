@@ -1,18 +1,23 @@
 <app-header></app-header>
-<div class='stockContainer'>
-    <h1>Add Product Stock</h1> <br>
-    <form #editForm (ngSubmit)="edit()"*ngIf="product" >
-       <div class="inputcontainer"> <label for="productName">Product Name:</label>
-          <label>{{product.productName}}</label></div>
-       <div class="inputcontainer">  <label for="stockQuantity">Quantity:</label>
-        <input type="number" [(ngModel)]="stockQuantity" name="stockQuantity" id="stockQuantity" value=1 min=1
-            autocomplete="off"><br></div>
-        <div class="inputcontainer"><label>Select Type:</label>
-        <select id="type" [(ngModel)]="type" required name="type">
-            <option value="ADD"> Add Stock</option>
-            <option value="RETURN">Return Stock</option>
-        </select></div>
-        <br>
-        <button class="addbtn" type="submit">Submit</button>
-    </form>
-</div>
+<app-content>
+    <div class='stockContainer'>
+        <h1>Add Product Stock</h1> <br>
+        <form #editForm (ngSubmit)="edit()" *ngIf="product">
+            <div class="inputcontainer"> <label for="productName">Product Name:</label>
+                <label>{{product.productName}}</label>
+            </div>
+            <div class="inputcontainer"> <label for="stockQuantity">Quantity:</label>
+                <input type="number" [(ngModel)]="stockQuantity" name="stockQuantity" id="stockQuantity" value=1 min=1
+                    autocomplete="off"><br>
+            </div>
+            <div class="inputcontainer"><label>Select Type:</label>
+                <select id="type" [(ngModel)]="type" required name="type">
+                    <option value="ADD"> Add Stock</option>
+                    <option value="RETURN">Return Stock</option>
+                </select>
+            </div>
+            <br>
+            <button class="addbtn" type="submit">Submit</button>
+        </form>
+    </div>
+</app-content>
